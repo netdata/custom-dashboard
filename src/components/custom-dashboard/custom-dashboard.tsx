@@ -1,4 +1,7 @@
 import React from "react"
+
+import { Button } from "@netdata/netdata-ui"
+
 import { FirstComponent } from "./styled"
 
 interface Props {
@@ -6,8 +9,14 @@ interface Props {
 }
 export const CustomDashboard = ({
 
-}: Props) => {
-  return (
-    <FirstComponent>Custom Dashboard</FirstComponent>
-  )
-}
+}: Props) => (
+  <FirstComponent>
+    Custom Dashboard
+    <Button
+      icon="plus"
+      onClick={() => {
+        alert("netdata-ui works!")
+      }}
+    />
+  </FirstComponent>
+)
