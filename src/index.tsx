@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import App from './App';
+import { CustomDashboard } from './components/custom-dashboard';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CustomDashboard />
   </React.StrictMode>,
   document.getElementById('root')
 );
