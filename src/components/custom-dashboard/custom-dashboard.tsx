@@ -1,22 +1,49 @@
-import React from "react"
+import React, { useState, useEffect } from "react";
+import RGL, { WidthProvider, Layout } from "react-grid-layout";
+import { cardSwitch } from "./card-switch";
+import { createInternalLayout, updateIntenalLayout } from "./helpers";
 
-import { Button } from "@netdata/netdata-ui"
+const ReactGridLayout = WidthProvider(RGL);
 
-import { FirstComponent } from "./styled"
-
-interface Props {
-
-}
 export const CustomDashboard = ({
+  layoutBindings,
+  handleLayoutChanges,
+  isLayoutFreezed = false,
+  cols = 12,
+  rowHeight = 20,
+  width = 1200,
+}: CustomDashboardT) => {
+  const [dLayout, setdLayout] = useState<Layout[]>(
+    createInternalLayout(layoutBindings, isLayoutFreezed)
+  );
 
-}: Props) => (
-  <FirstComponent>
-    Custom Dashboard
-    <Button
-      icon="plus"
-      onClick={() => {
-        alert("netdata-ui works!")
+  useEffect(() => {
+    setdLayout(updateIntenalLayout(dLayout, isLayoutFreezed));
+    // eslint-disable-next-line
+  }, [isLayoutFreezed]);
+
+  const bindedCardSwitch = cardSwitch(layoutBindings);
+
+  return (
+    <ReactGridLayout
+      className="layout"
+      layout={dLayout}
+      cols={cols}
+      rowHeight={rowHeight}
+      width={width}
+      onLayoutChange={(newLayout: Layout[]) => {
+        setdLayout(updateIntenalLayout(newLayout, isLayoutFreezed));
+        if (handleLayoutChanges) {
+          const newBindings = { ...layoutBindings };
+          newLayout.reduce((_, current) => {
+            newBindings[current.i].layout = current;
+            return _;
+          });
+          handleLayoutChanges(newBindings);
+        }
       }}
-    />
-  </FirstComponent>
-)
+    >
+      {dLayout?.map(bindedCardSwitch)}
+    </ReactGridLayout>
+  );
+};
