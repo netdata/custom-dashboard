@@ -47,7 +47,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "ts-bundle": "npm run _drop_native && npm run _clean && tsc && tsc -m es6",
-    "prepare": "install-peers && npm run ts-bundle"
+    "prepare": "npm install install-peers-cli --save-dev && npm run ts-bundle"
   },
   "eslintConfig": {
     "extends": "react-app"
