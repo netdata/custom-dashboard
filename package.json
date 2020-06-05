@@ -1,21 +1,29 @@
 {
-  "name": "custom-dashboard",
-  "version": "0.1.0",
+  "name": "@netdata/custom-dashboard",
+  "author": "netdata frontend team",
+  "version": "0.0.1",
+  "main": "./src/index.js",
   "private": true,
-  "dependencies": {
-    "@netdata/netdata-ui": "^0.7.30",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "ramda": "^0.27.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:netdata/custom-dashboard.git"
+  },
+  "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1",
+    "ramda": "^0.27.0"
+  },
+  "dependencies": {
+    "@netdata/netdata-ui": "^0.7.30",
     "react-grid-layout": "^0.18.3",
     "react-scripts": "3.4.1",
-    "styled-components": "^5.1.1",
     "typescript": "~3.7.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "@craco/craco": "^5.6.4",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
@@ -32,10 +40,14 @@
     "svgo-loader": "^2.2.1"
   },
   "scripts": {
+    "_drop_native": "./node_modules/rimraf/bin.js node_modules/@types/react-native/",
+    "_clean": "./node_modules/rimraf/bin.js build/*",
     "start": "craco start",
     "build": "craco build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ts-bundle": "npm run _drop_native && npm run _clean && tsc && tsc -m es6",
+    "prepare": "install-peers && npm run ts-bundle"
   },
   "eslintConfig": {
     "extends": "react-app"

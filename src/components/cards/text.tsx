@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { GenericCard } from "./generic";
 import { TextCardBox, TextHolder } from "./text.styled";
-
+import { TextPosition, TextType, TextWeight } from "./types";
 export type TextCardProps = {
   textSize?: number;
   textColor?: string;

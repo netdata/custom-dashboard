@@ -1,3 +1,5 @@
+type Layout = import("react-grid-layout").Layout;
+
 type CardProps<T, CO> = {
   cardType: string;
   key: string;
