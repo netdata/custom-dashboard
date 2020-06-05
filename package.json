@@ -3,7 +3,7 @@
   "author": "netdata frontend team",
   "version": "0.0.1",
   "main": "./lib/index.js",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git@github.com:netdata/custom-dashboard.git"
@@ -21,10 +21,10 @@
     "typescript": "~3.7.2"
   },
   "devDependencies": {
+    "@craco/craco": "^5.6.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@craco/craco": "^5.6.4",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/ramda": "^0.27.6",
@@ -34,6 +34,7 @@
     "@types/styled-components": "^5.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "install": "^0.13.0",
+    "install-peers-cli": "^2.2.0",
     "npm": "^6.14.5",
     "svg-sprite-loader": "^4.3.0",
     "svgo": "^1.3.2",
