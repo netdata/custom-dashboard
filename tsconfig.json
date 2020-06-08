@@ -20,7 +20,7 @@
   "include": ["src/index.ts", "src/types.d.ts"],
   "exclude": [
     "node_modules",
-    "/build",
+    "/lib",
     "setupTests.ts",
     "**/*.mock.tsx",
     "**/*.test.ts",
