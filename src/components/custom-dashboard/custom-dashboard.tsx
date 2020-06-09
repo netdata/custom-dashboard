@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import RGL, { WidthProvider, Layout } from "react-grid-layout";
 import { cardSwitch } from "./card-switch";
 import { createInternalLayout, updateIntenalLayout } from "./helpers";
+import { CustomDashboardT } from "../../types";
 
 const ReactGridLayout = WidthProvider(RGL);
 

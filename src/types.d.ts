@@ -1,6 +1,15 @@
-type Layout = import("react-grid-layout").Layout;
+import { Layout } from "react-grid-layout";
 
-type CardProps<T, CO> = {
+export interface TextCardProps {
+  textSize?: number;
+  textColor?: string;
+  textType?: TextType;
+  textWeight?: TextWeight;
+  textVerticalPosition?: TextPosition;
+  textHorizontalPosition?: TextPosition;
+}
+
+export type CardProps<T, CO> = {
   cardType: string;
   key: string;
   layout: Layout;
@@ -8,11 +17,11 @@ type CardProps<T, CO> = {
   options?: CO;
 };
 
-type LayoutBindings<T, CO> = {
+export type LayoutBindings<T, CO> = {
   [i: string]: CardProps<T, CO>;
 };
 
-type CustomDashboardT<T = string, CO = unknown> = {
+export type CustomDashboardT<T = string, CO = unknown> = {
   layoutBindings: LayoutBindings<T, CO>;
   handleLayoutChanges?: (bindings: LayoutBindings<T, CO>) => void;
   isLayoutFreezed?: boolean;

@@ -1,4 +1,5 @@
 import { Layout } from "react-grid-layout";
+import { LayoutBindings } from "../../types";
 
 export function createInternalLayout<T = string, OC = unknown>(
   layoutBindings: LayoutBindings<T, OC>,
