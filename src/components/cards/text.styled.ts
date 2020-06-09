@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { propOrElse } from "@netdata/netdata-ui";
-import { TextCardProps } from "./text";
+import { TextCardProps } from "../../types";
 
 type ToBePickedForText = "textSize" | "textColor" | "textType" | "textWeight";
 type ToBePickedForBox = "textVerticalPosition" | "textHorizontalPosition";

@@ -1,15 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { GenericCard } from "./generic";
 import { TextCardBox, TextHolder } from "./text.styled";
-import { TextPosition, TextType, TextWeight } from "./types";
-export type TextCardProps = {
-  textSize?: number;
-  textColor?: string;
-  textType?: TextType;
-  textWeight?: TextWeight;
-  textVerticalPosition?: TextPosition;
-  textHorizontalPosition?: TextPosition;
-};
+import { TextCardProps } from "../../types";
 
 export const TextCard = ({
   textSize = 25,

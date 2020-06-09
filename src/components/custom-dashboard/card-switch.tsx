@@ -1,6 +1,7 @@
 import React from "react";
 import { setCardType } from "../cards";
 import { Layout } from "react-grid-layout";
+import { LayoutBindings } from "../../types";
 
 export function cardSwitch<T, CO>(layoutBindings: LayoutBindings<T, CO>) {
   return ({ i }: Layout) => {
