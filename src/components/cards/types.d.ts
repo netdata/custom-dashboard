@@ -13,8 +13,3 @@ export type GridConfig = {
   isDraggable?: boolean;
   isResizable?: boolean;
 };
-
-/* Text types. Used for text cards mostly */
-export type TextPosition = "start" | "center" | "end";
-export type TextType = "normal" | "italic";
-export type TextWeight = "normal" | "bold";
