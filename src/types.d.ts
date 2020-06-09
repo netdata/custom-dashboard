@@ -1,5 +1,11 @@
 import { Layout } from "react-grid-layout";
 
+export type TextPosition = "start" | "center" | "end";
+
+export type TextType = "normal" | "italic";
+
+export type TextWeight = "normal" | "bold";
+
 export interface TextCardProps {
   textSize?: number;
   textColor?: string;
