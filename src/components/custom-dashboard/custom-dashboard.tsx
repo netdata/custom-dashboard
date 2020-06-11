@@ -6,14 +6,14 @@ import { CustomDashboardT } from "../../types";
 
 const ReactGridLayout = WidthProvider(RGL);
 
-export const CustomDashboard = ({
+export function CustomDashboard<T, CO>({
   layoutBindings,
   handleLayoutChanges,
   isLayoutFreezed = false,
   cols = 12,
   rowHeight = 20,
   width = 1200,
-}: CustomDashboardT) => {
+}: CustomDashboardT<T, CO>) {
   const [dLayout, setdLayout] = useState<Layout[]>(
     createInternalLayout(layoutBindings, isLayoutFreezed)
   );
@@ -47,4 +47,4 @@ export const CustomDashboard = ({
       {dLayout?.map(bindedCardSwitch)}
     </ReactGridLayout>
   );
-};
+}
