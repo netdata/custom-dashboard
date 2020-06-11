@@ -27,7 +27,7 @@ export type LayoutBindings<T, CO> = {
   [i: string]: CardProps<T, CO>;
 };
 
-export type CustomDashboardT<T = string, CO = unknown> = {
+export type CustomDashboardT<T, CO> = {
   layoutBindings: LayoutBindings<T, CO>;
   handleLayoutChanges?: (bindings: LayoutBindings<T, CO>) => void;
   isLayoutFreezed?: boolean;
