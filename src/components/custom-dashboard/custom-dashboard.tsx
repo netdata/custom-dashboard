@@ -28,6 +28,7 @@ export function CustomDashboard<T, CO>({
   return (
     <ReactGridLayout
       className="layout"
+      autoSize={true}
       layout={dLayout}
       cols={cols}
       rowHeight={rowHeight}
