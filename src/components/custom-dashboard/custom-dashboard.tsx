@@ -39,9 +39,8 @@ export function CustomDashboard<T, CO>({
         setdLayout(updateIntenalLayout(newLayout, isLayoutFreezed));
         if (handleLayoutChanges) {
           const newBindings = { ...layoutBindings };
-          newLayout.reduce((_, current) => {
+          newLayout.forEach((current) => {
             newBindings[current.i].layout = current;
-            return _;
           });
           handleLayoutChanges(newBindings);
         }
