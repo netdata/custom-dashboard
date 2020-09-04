@@ -1,7 +1,7 @@
 {
   "name": "@netdata/custom-dashboard",
   "author": "netdata frontend team",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "./lib/index.js",
   "private": false,
   "repository": {
@@ -15,7 +15,7 @@
     "ramda": "^0.27.0"
   },
   "dependencies": {
-    "@netdata/netdata-ui": "^0.10.11",
+    "@netdata/netdata-ui": "^0.10.12",
     "react-grid-layout": "^0.18.3",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
@@ -48,7 +48,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "ts-bundle": "npm run _drop_native && npm run _clean && tsc && tsc -m es6",
-    "prepare": "npm install install-peers-cli --save-dev && npm run ts-bundle"
+    "prepare": "install-peers && npm run ts-bundle"
   },
   "eslintConfig": {
     "extends": "react-app"
