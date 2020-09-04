@@ -5,7 +5,7 @@ import { TextCardProps } from "../../types";
 
 export const TextCard = ({
   textSize = 25,
-  textColor = "black",
+  textColor,
   textType = "normal",
   textWeight = "normal",
   textVerticalPosition = "start",

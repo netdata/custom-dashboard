@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { propOrElse } from "@netdata/netdata-ui";
+import { propOrElse, getColor } from "@netdata/netdata-ui";
 import { TextCardProps } from "../../types";
 
 type ToBePickedForText = "textSize" | "textColor" | "textType" | "textWeight";
@@ -14,5 +14,5 @@ export const TextHolder = styled.span<Pick<TextCardProps, ToBePickedForText>>`
   font-style: ${propOrElse(["textType"], "normal")};
   font-weight: ${propOrElse(["textWeight"], "normal")};
   font-size: ${propOrElse(["textSize"], 11)}px;
-  color: ${propOrElse(["textColor"], "#35414a")};
+  color: ${({textColor}) => textColor || getColor("text")};
 `;
